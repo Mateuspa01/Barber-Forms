@@ -26,19 +26,23 @@ function VerificarData(){
     const Dia = Calendario.getDate()
     const Mes = Calendario.getMonth() + 1 
 
-    if(DataInputDate.getDay() === 6) {
-        return false
+    if(DataInputDate.getFullYear() < Ano){
+        return false;
     }else{
-        if(Number(DataInputVetor[1]) > Mes){
-            return true
-        }else 
-        if(Number(DataInputVetor[1]) === Mes){
-            if(DataInputVetor[2] < Dia){
-                return false
-            }else{
+        if(DataInputDate.getDay() === 6) {
+            return false
+        }else{
+            if(Number(DataInputVetor[1]) > Mes){
                 return true
-            }  
-        }else return false
+            }else 
+            if(Number(DataInputVetor[1]) === Mes){
+                if(DataInputVetor[2] < Dia){
+                    return false
+                }else{
+                    return true
+                }  
+            }else return false
+        }
     }
 }
 
