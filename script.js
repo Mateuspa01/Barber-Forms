@@ -25,6 +25,7 @@ function VerificarData(){
     const Calendario = new Date()
     const Dia = Calendario.getDate()
     const Mes = Calendario.getMonth() + 1 
+    const Ano = Calendario.getFullYear()
 
     if(DataInputDate.getFullYear() < Ano){
         return false;
